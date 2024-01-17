@@ -1,5 +1,4 @@
-earthquakeData
-time,latitude,longitude,depth,mag,place
+earthquakeData,,,,,
 2023-01-27T20:38:18.248Z,60.2372,-138.2327,9.2,3.5,"Southern Yukon Territory, Canada"
 2023-01-27T20:25:27.038Z,10.7145,125.4476,69.238,5.4,"32 km ENE of Hingatungan, Philippines"
 2023-01-27T18:55:57.550Z,51.5054,-175.733,32.5,3.9,"74 km ESE of Adak, Alaska"
