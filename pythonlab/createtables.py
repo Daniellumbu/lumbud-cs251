@@ -24,6 +24,7 @@ commands2 = """ CREATE TABLE state_abbreviations (
         """
 cur.execute(commands)
 cur.execute(commands2)
+conn.commit()
 
   
   
