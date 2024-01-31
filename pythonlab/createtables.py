@@ -17,7 +17,6 @@ commands = """
         )
         """
 commands2 = """ CREATE TABLE state_abbreviations (
-        state_id SERIAL PRIMARY KEY,
         state_name VARCHAR(255) NOT NULL,
         state_code VARCHAR(2) NOT NULL
                 )
