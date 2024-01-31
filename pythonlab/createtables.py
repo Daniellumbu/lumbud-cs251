@@ -9,16 +9,16 @@ conn = psycopg2.connect(
 cur = conn.cursor()
 commands = """
         CREATE Table us_cities (
-        city_name VARCHAR(255) NOT NULL,
-        state_code VARCHAR(2) NOT NULL,
-        population INTEGER,
-        latitude DOUBLE PRECISION,
-        longitude DOUBLE PRECISION
+        city_name text,
+        state_code text,
+        population real,
+        latitude real,
+        longitude real
         )
         """
 commands2 = """ CREATE TABLE state_abbreviations (
-        state_name VARCHAR(255) NOT NULL,
-        state_code VARCHAR(2) NOT NULL
+        state_name text,
+        state_code text
                 )
         """
 cur.execute(commands)
