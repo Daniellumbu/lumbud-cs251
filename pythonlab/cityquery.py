@@ -74,6 +74,8 @@ def North_west():
     row3 = cur.fetchone()
     cur.execute( sql4 )
     row4 = cur.fetchone()
+    print(str(row1[0]) + " is the Furthest North")
+    print(str(row2[0]) + " is the Furthest East")
     print(str(row3[0]) + " is the Furthest South")
     print(str(row4[0]) + " is the Furthest West")
 
@@ -96,7 +98,7 @@ def total_population():
         cur.execute(sql)
         city_name = cur.fetchone()
    
-    sql = "SELECT SUM(population) AS total_population FROM us_cities WHERE state_code = '%s';"
+    sql = "SELECT SUM(population) AS total_population FROM us_cities WHERE state_code = %s;"
     
     cur.execute( sql, [city_name])
 
