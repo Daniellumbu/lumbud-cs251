@@ -98,12 +98,19 @@ def total_population():
         cur.execute(sql)
         city_name = cur.fetchone()
    
-    sql = "SELECT SUM(population) AS total_population FROM us_cities WHERE state_code = %s;"
+        sql = "SELECT SUM(population) AS total_population FROM us_cities WHERE state_code = %s;"
+        
+        cur.execute( sql, [city_name])
     
-    cur.execute( sql, [city_name])
-
-    row = cur.fetchone()
-    print(str(row[0]) + " is the total population of " + city_name)
+        row = cur.fetchone()
+        print(str(row[0]) + " is the total population of " + str(city_name[0]))
+    else:
+        sql = "SELECT SUM(population) AS total_population FROM us_cities WHERE state_code = %s;"
+        
+        cur.execute( sql, [city_name])
+    
+        row = cur.fetchone()
+        print(str(row[0]) + " is the total population of " + city_name)
 
 is_Northfield()
 largest_Smallest_city()
