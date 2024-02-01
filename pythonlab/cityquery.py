@@ -47,8 +47,8 @@ def largest_Smallest_city():
     cur.execute( sql2 )
     row2 = cur.fetchone()
 
-    print(row1 + " is the Largest City")
-    print(row2 + " is the Smallest City in Minnesota")
+    print(str(row1[0]) + " is the Largest City")
+    print(str(row2[0]) + " is the Smallest City in Minnesota")
 
 #prints the furthest cities north, east, south and west
 def North_west():
@@ -74,8 +74,8 @@ def North_west():
     row3 = cur.fetchone()
     cur.execute( sql4 )
     row4 = cur.fetchone()
-    print(row3 + " is the Furthest South")
-    print(row4 + " is the Furthest West")
+    print(str(row3[0]) + " is the Furthest South")
+    print(str(row4[0]) + " is the Furthest West")
 
 # Takes user input and returns the total population of a city
 def total_population():
@@ -101,7 +101,7 @@ def total_population():
     cur.execute( sql, [city_name])
 
     row = cur.fetchone()
-    print( row + " is the total population of " + city_name)
+    print(str(row[0]) + " is the total population of " + city_name)
 
 is_Northfield()
 largest_Smallest_city()
