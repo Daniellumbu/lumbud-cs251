@@ -1,4 +1,5 @@
 import flask
+import psycopg2
 
 app = flask.Flask(__name__)
 
@@ -51,7 +52,7 @@ def total_population(word1):
         cur.execute( sql, [city_name])
     
         row = cur.fetchone()
-        return "Hello"
+        return str(row[0]) + " is the total population of " + city_name
 
 if __name__ == '__main__':
     my_port = 5129
