@@ -51,7 +51,7 @@ def total_population(word1):
         cur.execute( sql, [city_name])
     
         row = cur.fetchone()
-        return str(row[0]) + " is the total population of " + city_name
+        return "Hello"
 
 if __name__ == '__main__':
     my_port = 5129
