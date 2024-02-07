@@ -1,3 +1,4 @@
+# Author Daniel Lumbu
 import flask
 import psycopg2
 
@@ -35,24 +36,17 @@ def total_population(word1):
 
     city_name = word1
 
-    if len(city_name) == 2:
-        sql = "SELECT state_name from state_abbreviations WHERE state_code ='CA';"
-        cur.execute(sql)
-        city_name = cur.fetchone()
-   
-        sql = "SELECT SUM(population) AS total_population FROM us_cities WHERE state_code = %s;"
-        
-        cur.execute( sql, [city_name])
+    sql = "SELECT state_name from state_abbreviations WHERE state_code ='CA';"
+    cur.execute(sql)
+    city_name = cur.fetchone()
+
+    sql = "SELECT SUM(population) AS total_population FROM us_cities WHERE state_code = %s;"
     
-        row = cur.fetchone()
-        return str(row[0]) + " is the total population of " + str(city_name[0])
-    else:
-        sql = "SELECT SUM(population) AS total_population FROM us_cities WHERE state_code = %s;"
-        
-        cur.execute( sql, [city_name])
+    cur.execute( sql, [city_name])
+
+    row = cur.fetchone()
     
-        row = cur.fetchone()
-        return str(row[0]) + " is the total population of " + city_name
+    return str(row[0]) + " is the total population of " + str(city_name[0])
 
 if __name__ == '__main__':
     my_port = 5129
