@@ -36,7 +36,7 @@ def total_population(word1):
 
     city_name = word1
 
-    sql = "SELECT state_name from state_abbreviations WHERE state_code ='CA';"
+    sql = "SELECT state_name from state_abbreviations WHERE state_code ='ca';"
     cur.execute(sql)
     city_name = cur.fetchone()
 
