@@ -23,14 +23,14 @@ def total_population(word1):
 
     sql = "SELECT state_name from state_abbreviations WHERE state_code = %s;"
     cur.execute(sql,[city_name])
-    city_name = cur.fetchone()
+    state_name = cur.fetchone()
 
     sql = "SELECT SUM(population) AS total_population FROM us_cities WHERE state_code = %s;"
     
     cur.execute( sql, [city_name])
 
     row = cur.fetchone()
-    return render_template("results.html", randstr = str(str(row[0]) + " is the total population of " + str(city_name)))
+    return render_template("results.html", randstr = str(str(row[0]) + " is the total population of " + str(state_name[0])))
     
 
 if __name__ == '__main__':
