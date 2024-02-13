@@ -19,6 +19,8 @@ def total_population(word1):
 
     cur = conn.cursor()
 
+    print(" helllo" + word1)
+
     sql = f"SELECT state_name FROM state_abbreviations WHERE state_code = '{word1}';"
     cur.execute(sql)
     state_name = cur.fetchone()
@@ -27,7 +29,7 @@ def total_population(word1):
     cur.execute( sql, [state_name])
 
     row = cur.fetchone()
-    return render_template("results.html", randstr = str(str(row[0]) + " is the total population of " + str(state_name[0])))
+    return render_template("results.html", randstr = str(str(row[0]) + " is the total population of " + str(state_name)))
     
 
 if __name__ == '__main__':
