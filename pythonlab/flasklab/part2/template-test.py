@@ -16,7 +16,7 @@ def rand(low, high):
     high_int = int(high)
     
     num = random.randint(low_int, high_int)
-    return render_template("random.html", randNum = num)
+    return render_template("random.html", randNum = str(num))
 
 if __name__ == '__main__':
     my_port = 5129
