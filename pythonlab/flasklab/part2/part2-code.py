@@ -21,8 +21,8 @@ def total_population(word1):
 
     city_name = word1
 
-    sql = "SELECT state_name from state_abbreviations WHERE state_code ='CA';"
-    cur.execute(sql)
+    sql = "SELECT state_name from state_abbreviations WHERE state_code = %s;"
+    cur.execute(sql,[city_name])
     city_name = cur.fetchone()
 
     sql = "SELECT SUM(population) AS total_population FROM us_cities WHERE state_code = %s;"
