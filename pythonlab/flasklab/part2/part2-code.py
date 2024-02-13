@@ -30,7 +30,7 @@ def total_population(word1):
     cur.execute( sql, [city_name])
 
     row = cur.fetchone()
-    return render_template("result.html", randstr = str(row[0]) + " is the total population of " + str(city_name[0]))
+    return render_template("result.html", randstr = str(str(row[0]) + " is the total population of " + str(city_name[0])))
     
 
 if __name__ == '__main__':
