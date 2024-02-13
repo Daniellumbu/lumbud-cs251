@@ -20,11 +20,16 @@
     });
     </script>
 
-
-    &nbsp &nbsp &nbsp
-    <a href="/pop/"+inputElement;>
-      <button>Submit</button>
+     &nbsp;&nbsp;&nbsp;
+    <a href="#" onclick="submitForm()">
+        <button>Submit</button>
     </a>
+
+    <script>
+        function submitForm() {
+            var inputValue = inputElement.value;
+            window.location.href = "/pop/" + inputValue;
+        }
+    </script>
 </body>
- 
 </html>
