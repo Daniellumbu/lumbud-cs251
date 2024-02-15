@@ -33,20 +33,16 @@ def total_population(word1):
         password="spider665eyebrow")
 
     cur = conn.cursor()
-
-    city_name = word1
-
-    sql = "SELECT state_name from state_abbreviations WHERE state_code ='CA';"
+    city_name = word1.upper()
+    sql = f"SELECT state_name FROM state_abbreviations WHERE state_code = '{city_name}';"
     cur.execute(sql)
-    city_name = cur.fetchone()
+    state_name = cur.fetchone()
 
     sql = "SELECT SUM(population) AS total_population FROM us_cities WHERE state_code = %s;"
-    
-    cur.execute( sql, [city_name])
+    cur.execute( sql, [state_name])
 
     row = cur.fetchone()
-    
-    return str(row[0]) + " is the total population of " + str(city_name[0])
+    return str(row[0]) + " is the total population of " + str(state_name[0])
 
 if __name__ == '__main__':
     my_port = 5129
