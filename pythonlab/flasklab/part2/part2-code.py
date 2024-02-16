@@ -23,11 +23,15 @@ def total_population(word1):
     cur.execute(sql)
     state_name = cur.fetchone()
 
+    sql2 = f"SELECT city_name FROM us_cities WHERE state_code = '{city_name} AND population = (SELECT MIN(population) FROM us_cities WHERE state_code = '{city_name}');"
+    cur.execute( sql2 )
+    row2 = cur.fetchone()
+    
     sql = "SELECT SUM(population) AS total_population FROM us_cities WHERE state_code = %s;"
     cur.execute( sql, [state_name])
 
     row = cur.fetchone()
-    return render_template("results.html", randstr = str(str(row[0]) + " is the total population of " + str(state_name[0])))
+    return render_template("results.html",  randstr =  str(state_name[0]) + "\n" str(str(row[0]) + " is the total population \n " + str(row2[0]) + " is the Smallest City"))
     
 
 if __name__ == '__main__':
