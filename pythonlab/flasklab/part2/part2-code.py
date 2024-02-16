@@ -31,7 +31,7 @@ def total_population(word1):
     cur.execute( sql, [state_name])
 
     row = cur.fetchone()
-    return render_template("results.html",  randstr =  str(state_name[0]) + "\n" str(str(row[0]) + " is the total population \n " + str(row2[0]) + " is the Smallest City"))
+    return render_template("results.html",  randstr =  str(state_name[0]) + "\n" + str(str(row[0]) + " is the total population \n " + str(row2[0]) + " is the Smallest City"))
     
 
 if __name__ == '__main__':
