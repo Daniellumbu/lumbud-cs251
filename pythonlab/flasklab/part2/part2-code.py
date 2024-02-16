@@ -23,7 +23,7 @@ def total_population(word1):
     cur.execute(sql)
     state_name = cur.fetchone()
 
-    sql2 = f"SELECT city_name FROM us_cities WHERE state_code = '{state_name} AND population = (SELECT MIN(population) FROM us_cities WHERE state_code = '{state_name}');"
+    sql2 = f"SELECT city_name FROM us_cities WHERE state_code = '{state_name[0]}' AND population = (SELECT MIN(population) FROM us_cities WHERE state_code = '{state_name[0]}');"
     cur.execute( sql2 )
     row2 = cur.fetchone()
     
