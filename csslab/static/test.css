@@ -1,11 +1,5 @@
-.body {
+.Body {
   background-color: lightgray; 
-}
-
-.p {
-  background-image: url("static/image.jpg"); 
-  background-repeat: no-repeat; 
-  background-position: center; 
 }
 
 .class1{
