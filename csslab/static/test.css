@@ -1,5 +1,10 @@
 body {
-  background-color: darkslategray; 
+    margin: 0;
+    padding: 0;
+    background-image: url('image.jpg'); 
+    background-size: cover;
+    background-position: center;
+    font-family: Arial, sans-serif;
 }
 
 .class1{
