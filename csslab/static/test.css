@@ -11,6 +11,7 @@
   color: green;
 }
 .class3{
-  text-align: center;
-  color: green;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
