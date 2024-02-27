@@ -1,4 +1,6 @@
-function changeColor() {
-  the_heading = document.getElementById("hello");
-  the_heading.style.color = "red";
-}
+document.addEventListener('DOMContentLoaded', function() {
+    var textElement = document.getElementById('hello');
+    textElement.addEventListener('click', function() {
+        textElement.style.color = 'red';
+    });
+});
